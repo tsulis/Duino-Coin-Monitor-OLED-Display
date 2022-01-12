@@ -1,5 +1,10 @@
-#include <ArduinoJson.h> //https://arduinojson.org
+// https://github.com/adafruit/Adafruit_BusIO
+// https://github.com/adafruit/Adafruit_SSD1306
+// https://github.com/adafruit/Adafruit-GFX-Library
+// https://github.com/bblanchon/ArduinoJson
+
 #include <Wire.h>
+#include <ArduinoJson.h> // V6!
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_GFX.h>
 
@@ -19,7 +24,7 @@
  */
 #define SCREEN_ADDRESS 0x3C
 
-#define OLED_RESET     4 // Reset pin # (or -1 if sharing Arduino reset pin)
+#define OLED_RESET     4 // Reset pin # (or -1 if sharing Arduino reset pin),if ESP8266 Change OLED_RESET to different pin if using default I2C pins D4/D5.
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 #if ESP8266
