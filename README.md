@@ -1,1 +1,1 @@
-# Duino-Coin-Monitor-OLED-Display
+# Duino Coin Monitor OLED Display
