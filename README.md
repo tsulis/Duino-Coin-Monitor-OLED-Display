@@ -45,7 +45,9 @@ const char *password = "YOUR_SSID_PASSWORD"; // Change this to your WiFi passwor
 const String ducoUser = "YOUR_DUINO_USERNAME"; // Change this to your Duino-Coin username
 ```
 # Wiring:
-|| ESP8266 | ESP32 | OLED |
+Change SDA and SCL accordingly with your board, this example tested with Wemos D1 Mini and Dev Kit V1
+
+|| ESP8266 (Wemos D1 Mini) | ESP32 (Dev Kit V1) | OLED |
 |:-:| :----: | :----: | :-----: |
 ||3.3V | 3.3V | VCC |
 ||GND | GND | GND |
