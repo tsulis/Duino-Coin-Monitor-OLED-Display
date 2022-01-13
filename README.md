@@ -25,7 +25,7 @@
    - use <b>0x3D</b> if screen resolution 128x64 pixel
    - use <b>0x3C</b> if screen resolution 128x32 pixel
 3. For ESP8266
-   - According to lib spec https://github.com/adafruit/Adafruit_SSD1306, change pin OLED RESET
+   - According to lib spec https://github.com/adafruit/Adafruit_SSD1306, change pin OLED RESET if conflict with i2c or populated pin.
 
 # Wiring:
 || ESP8266 | ESP32 | OLED |
