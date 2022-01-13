@@ -27,7 +27,6 @@
 
 3. For ESP8266
    - According to lib spec https://github.com/adafruit/Adafruit_SSD1306, change pin OLED_RESET if conflict with I2C.
-   - In this repo : <i>#define OLED_RESET     D4</i>
    
    ```
    #if ESP8266
