@@ -24,19 +24,19 @@
  */
 #define SCREEN_ADDRESS 0x3C
 
-#define OLED_RESET     4 // Reset pin # (or -1 if sharing Arduino reset pin),if ESP8266 Change OLED_RESET to different pin if using default I2C pins D4/D5.
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-
 #if ESP8266
 #include <ESP8266HTTPClient.h>
 #include <ESP8266WiFi.h>
+#define OLED_RESET     D4
 #endif
 
 #if ESP32
 #include <WiFi.h>
 #include <HTTPClient.h>
+#define OLED_RESET     4
 #endif
 
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 const char *ssid = "KARBELA20 2"; // Change this to your WiFi SSID
 const char *password = "4gustu5#"; // Change this to your WiFi password
