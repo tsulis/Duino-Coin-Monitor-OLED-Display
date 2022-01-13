@@ -25,20 +25,7 @@
     - use 0x3D if screen resolution 128x64 pixel
     - use 0x3C if screen resolution 128x32 pixel
 
-3. For ESP8266
-   - According to lib spec https://github.com/adafruit/Adafruit_SSD1306, change pin OLED_RESET if conflict with I2C.
-   
-   ```
-   #if ESP8266
-   #include <ESP8266HTTPClient.h>
-   #include <ESP8266WiFi.h>
-   #define OLED_RESET     D4
-   #endif
-   ```
-   
-
-
-4. WiFi and Duino User
+3. WiFi and Duino User
 ```
 const char *ssid = "YOUR_SSID"; // Change this to your WiFi SSID
 const char *password = "YOUR_SSID_PASSWORD"; // Change this to your WiFi password
