@@ -11,7 +11,7 @@
 `- https://github.com/adafruit/Adafruit-GFX-Library`<br>
 `- https://github.com/bblanchon/ArduinoJson`<br>
 
-# Setup:
+# OLED Display Software Setup:
 
 1. OLED Display Screen Resolution, Change to your OLED display width and height.
 ```
