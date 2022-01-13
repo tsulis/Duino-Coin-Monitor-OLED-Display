@@ -57,18 +57,12 @@ void initDisplayOled() {
 
 }
 
-void test_oled() {
-
-    display.clearDisplay();
-    display.setTextSize(1); // Normal 1:1 pixel scale
-    display.setTextColor(WHITE); // Draw white text
-    display.setCursor(0, 0); // Start at top-left corner
-    display.println("CNC STORE BANDUNG");  //tulis tulisan "CNC STORE BANDUNG"
-    display.setTextColor(WHITE); // Draw 'inverse' text
-    display.println("GIVE YOU"); //tulis tulisan "GIVE YOU"
-    display.setTextSize(2); // Draw 2X-scale text
-    display.setTextColor(WHITE);
-    display.print("BETTER"); //tulis tulisan "BETTER"
-    display.display();
-
+boolean runEvery(unsigned long interval) {
+    static unsigned long previousMillis = 0;
+    unsigned long currentMillis = millis();
+    if (currentMillis - previousMillis >= interval) {
+        previousMillis = currentMillis;
+        return true;
+    }
+    return false;
 }

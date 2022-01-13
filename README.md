@@ -28,6 +28,12 @@
 3. For ESP8266
    - According to lib spec https://github.com/adafruit/Adafruit_SSD1306, change pin OLED_RESET if conflict with I2C.
 
+4. WiFi and Duino User
+```
+const char *ssid = "YOUR_SSID"; // Change this to your WiFi SSID
+const char *password = "YOUR_SSID_PASSWORD"; // Change this to your WiFi password
+const String ducoUser = "YOUR_DUINO_USERNAME"; // Change this to your Duino-Coin username
+```
 # Wiring:
 || ESP8266 | ESP32 | OLED |
 |:-:| :----: | :----: | :-----: |
