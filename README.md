@@ -1,9 +1,11 @@
 # Duino Coin Monitor OLED Display
 
 # Install Library:
-1. Install Library Arduino core for ESP8266
-2. Install Library Arduino core for the ESP32
-3. Install Library : <br>
+1. Install Library Arduino core for ESP8266 <br>
+   `- https://github.com/esp8266/Arduino`
+3. Install Library Arduino core for the ESP32 <br>
+   `- https://github.com/espressif/arduino-esp32`
+5. Install Library : <br>
 `- https://github.com/adafruit/Adafruit_BusIO`<br>
 `- https://github.com/adafruit/Adafruit_SSD1306`<br>
 `- https://github.com/adafruit/Adafruit-GFX-Library`<br>
