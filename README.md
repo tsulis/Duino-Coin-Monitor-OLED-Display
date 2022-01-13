@@ -40,3 +40,6 @@ Change SDA and SCL accordingly with your board, this example tested with Wemos D
 ||GND | GND | GND |
 |`SCL`|D1 (GPIO5) | GPIO22| SCL |
 |`SDA`|D2 (GPIO4) | GPIO21 | SDA |
+
+# Else :
+Feel free to modify, optimize and/or add yours. 
