@@ -9,7 +9,7 @@
 `- https://github.com/adafruit/Adafruit_BusIO`<br>
 `- https://github.com/adafruit/Adafruit_SSD1306`<br>
 `- https://github.com/adafruit/Adafruit-GFX-Library`<br>
-`- https://github.com/bblanchon/ArduinoJson`<br>
+`- https://github.com/bblanchon/ArduinoJson` (use V6) <br>
 
 # OLED Display Software Setup:
 
