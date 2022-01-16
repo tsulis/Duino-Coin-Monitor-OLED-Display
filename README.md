@@ -1,6 +1,6 @@
 # Duino Coin Monitor OLED Display
 
-<img src="img/photo_2022-01-16 18.52.53.jpg" alt="DuinoWebConfig" width="100%">
+<img src="img/duino_coin_monitor_oled.jpeg" alt="duino_coin_monitor_oled.jpeg" width="100%">
 
 # Install Library:
 1. Install Library Arduino core for ESP8266 <br>
