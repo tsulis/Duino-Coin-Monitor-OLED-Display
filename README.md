@@ -1,5 +1,7 @@
 # Duino Coin Monitor OLED Display
 
+<img src="img/photo_2022-01-16 18.52.53.jpg" alt="DuinoWebConfig" width="100%">
+
 # Install Library:
 1. Install Library Arduino core for ESP8266 <br>
    `- https://github.com/esp8266/Arduino`
@@ -32,9 +34,9 @@ const char *password = "YOUR_SSID_PASSWORD"; // Change this to your WiFi passwor
 const String ducoUser = "YOUR_DUINO_USERNAME"; // Change this to your Duino-Coin username
 ```
 # Wiring:
-Change SDA and SCL accordingly with your board, this example tested with Wemos D1 Mini and Dev Kit V1
+Change SDA and SCL accordingly with your board, this example tested with Wemos D1 Mini and DevKit V1
 
-|| ESP8266 (Wemos D1 Mini) | ESP32 (Dev Kit V1) | OLED |
+|| ESP8266 | ESP32 | OLED |
 |:-:| :----: | :----: | :-----: |
 ||3.3V | 3.3V | VCC |
 ||GND | GND | GND |

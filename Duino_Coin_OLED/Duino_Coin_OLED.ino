@@ -26,7 +26,7 @@
 
 #if ESP8266
 #include <ESP8266HTTPClient.h>
-#include <ESP8266WiFi.h>
+#include <ESP8266WiFi.h> 
 #define OLED_RESET     D4
 #endif
 
@@ -38,9 +38,9 @@
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
-const char *ssid = "KARBELA20 2"; // Change this to your WiFi SSID
-const char *password = "4gustu5#"; // Change this to your WiFi password
-const String ducoUser = "fancyDuckling"; // Change this to your Duino-Coin username
+const char *ssid = "YOUR_SSID"; // Change this to your WiFi SSID
+const char *password = "YOUR_SSID_PASSWORD"; // Change this to your WiFi password
+const String ducoUser = "YOUR_DUINO_USERNAME"; // Change this to your Duino-Coin username
 
 const String ducoReportJsonUrl = "https://server.duinocoin.com/v2/users/" + ducoUser + "?limit=1";
 
@@ -64,7 +64,7 @@ void loop() {
 
         float totalHashrate = 0.0;
         float avgHashrate = 0.0;
-        double total_miner = 0;
+        int total_miner = 0;
 
         String input = httpGetString(ducoReportJsonUrl);
 
@@ -81,24 +81,25 @@ void loop() {
         JsonObject result = doc["result"];
 
         JsonObject result_balance = result["balance"];
-        double result_balance_balance = result_balance["balance"]; // 7256.5196157712135
-        const char *result_balance_created = result_balance["created"]; // "04/10/2021 12:42:26"
-        const char *result_balance_username = result_balance["username"]; // "fancyDuckling"
-        const char *result_balance_verified = result_balance["verified"]; // "no"
-        total_miner = result["miners"];
+        double result_balance_balance = result_balance["balance"];
+        const char *result_balance_created = result_balance["created"];
+        const char *result_balance_username = result_balance["username"];
+        const char *result_balance_verified = result_balance["verified"];
 
         for (JsonObject result_miner : result["miners"].as<JsonArray>()) {
 
 
-            float result_miner_hashrate = result_miner["hashrate"]; // 184.11, 193.83
+            float result_miner_hashrate = result_miner["hashrate"];
 
             totalHashrate = totalHashrate + result_miner_hashrate;
+
+            total_miner++;
 
         }
 
         avgHashrate = totalHashrate / long(total_miner);
-//    lastAverageHash = avgHashrate;
-//    lastTotalHash = totalHashrate;
+
+        long run_span = run_in_ms / 1000;
 
 
 /*
@@ -114,16 +115,17 @@ void loop() {
         Serial.println("result_balance_username : " + String(result_balance_username));
         Serial.println("result_balance_balance : " + String(result_balance_balance));
         Serial.println("totalHashrate : " + String(totalHashrate));
-        Serial.println("Current H/s : " + String(avgHashrate));
+        Serial.println("avgHashrate H/s : " + String(avgHashrate));
+        Serial.println("total_miner : " + String(total_miner));
 
-//  display.clearDisplay();
-        display.setTextSize(1); // Normal 1:1 pixel scale
-        display.setTextColor(WHITE); // Draw white text
-        display.setCursor(0, 0); // Start at top-left corner
+        display.clearDisplay();
+        display.setTextSize(1);
+        display.setTextColor(WHITE);
+        display.setCursor(0, 0);
         display.println("User : " + String(result_balance_username));
-        display.println("Total Miner " + String(total_miner));
+        display.println("Total Miner : " + String(total_miner));
         display.println("Balance : " + String(result_balance_balance));
-        display.println("H/s : " + String(avgHashrate));
+        display.println("H/s (" + String(run_span) + "s): " + String(totalHashrate));
         display.display();
     }
 
