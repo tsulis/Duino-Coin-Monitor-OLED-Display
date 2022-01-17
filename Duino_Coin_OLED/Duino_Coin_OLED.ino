@@ -68,7 +68,7 @@ void loop() {
 
         String input = httpGetString(ducoReportJsonUrl);
 
-        StaticJsonDocument<3000> doc;
+        DynamicJsonDocument doc (5000);
 
         DeserializationError error = deserializeJson(doc, input);
 
