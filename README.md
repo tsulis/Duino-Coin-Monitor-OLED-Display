@@ -45,3 +45,8 @@ Change SDA and SCL accordingly with your board, this example with Wemos D1 Mini 
 
 # Else :
 Feel free to modify, optimize and/or add yours. 
+
+# Misc :
+Dont be confuse with OLED screen size, there are two common size :
+   - OLED 1.3" Display (128x64)
+   - OLED 0.9" Display (128x32)
