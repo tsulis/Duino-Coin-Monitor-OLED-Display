@@ -67,9 +67,7 @@ void loop() {
         int total_miner = 0;
 
         String input = httpGetString(ducoReportJsonUrl);
-
         DynamicJsonDocument doc (8000);
-
         DeserializationError error = deserializeJson(doc, input);
 
         if (error) {
@@ -87,18 +85,11 @@ void loop() {
         const char *result_balance_verified = result_balance["verified"];
 
         for (JsonObject result_miner : result["miners"].as<JsonArray>()) {
-
-
             float result_miner_hashrate = result_miner["hashrate"];
-
             totalHashrate = totalHashrate + result_miner_hashrate;
-
             total_miner++;
-
         }
-
         avgHashrate = totalHashrate / long(total_miner);
-
         long run_span = run_in_ms / 1000;
 
 
@@ -125,7 +116,7 @@ void loop() {
         display.println("User : " + String(result_balance_username));
         display.println("Total Miner : " + String(total_miner));
         display.println("Balance : " + String(result_balance_balance));
-        display.println("H/s (" + String(run_span) + "s): " + String(totalHashrate));
+        display.println("KH/s (" + String(run_span) + "s): " + String(totalHashrate/1000));
         display.display();
     }
 
