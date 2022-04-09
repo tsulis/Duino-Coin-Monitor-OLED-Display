@@ -51,5 +51,7 @@ Dont be confuse with OLED screen size, there are two common size :
    - OLED 1.3" Display (128x64)
    - OLED 0.96" Display (128x32)
 
+**if you having difficulty on ESP8266 pin reset D4, replace it with -1
+
 <br>
 <a href="https://www.buymeacoffee.com/tsulis" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
